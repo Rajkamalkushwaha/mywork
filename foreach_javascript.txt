@@ -1,0 +1,7 @@
+For Each
+
+var friends=["raj","kamal","kushwaha","borkhera"];
+
+friends.foreach(function(eachName,index){
+console.log(index+1+"."+eachName);
+);
