@@ -1,0 +1,30 @@
+<html>
+<body>
+<script>
+
+//Create new promise and return value with setTimeout function.  
+
+function afterTwoSecond(){
+   return new Promise(resolve=>{            //return promise when call this function 
+   setTimeout(()=>{                       //use for time interval
+	   resolve('resolved');
+   },2000) ;
+   });
+}
+
+//call promise with async function with await.
+//When async function called it return the promise. 
+  async function call(){
+
+	document.write('before use await');
+	
+	var result=await afterTwoSecond();  //await expression  pauses execution and wait passed promise resolution. 
+	
+         document.write(result);
+	}
+	
+	
+	call(); 
+</script>
+</body>
+</html>
