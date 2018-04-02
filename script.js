@@ -26,12 +26,14 @@ function startGame(){
    	
  function turnClick(square) {
    turn(square.target.id,huPlayer)	
+   if(!checkTie()) turn(bestSpot(),aiPlayer);
   	}
   function turn(squareId,player){
   	origBoard[squareId]=player;
   	document.getElementById(squareId).innerText=player;
   	let gameWon=checkWin(origBoard,player)
-  	if(gameWon) gameOver(gameWon){
+  	if(gameWon) gameOver(gameWon)
+  	}
   		
   		function checkWin(board,player){
   		let plays=board.reduce((a,e,i)=>
