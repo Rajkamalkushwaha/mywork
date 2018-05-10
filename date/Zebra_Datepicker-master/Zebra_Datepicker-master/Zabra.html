@@ -1,0 +1,22 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="path/to/jquery-3.2.1.js"><\/script>')</script>
+<script src="path/to/zebra_datepicker.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/zebra_datepicker/dist/zebra_datepicker.min.js"></script>
+<link rel="stylesheet" href="path/to/theme/zebra_datepicker.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/zebra_datepicker/dist/css/default/zebra_datepicker.min.css">
+
+</head>
+<body>
+<input type="text" id="datepicker" data-zdp_direction="1" data-zdp_disabled_dates='["* * * 0,6"]'>
+<script>
+$(document).ready(function() {
+ $('#datepicker').Zebra_DatePicker({
+    view: 'years',
+	format: 'Y-m-d H:i'
+  });
+});
+</script>
+</body>
+</hmtl>
