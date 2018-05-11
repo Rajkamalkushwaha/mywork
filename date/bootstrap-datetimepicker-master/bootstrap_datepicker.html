@@ -2,7 +2,11 @@
 <head>
 <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-<link href="build/css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css">
+<link href="build/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+
+<script>
+
+</script>
 
 <title>Bootstrap Date/Time Picker</title>
 </head>
@@ -20,38 +24,31 @@
                 </div>
 </div>
 </div>
-<div class="col-lg-4">
-<div class="form-group">
-                <div class='input-group date' id='datetimepicker2'>
-                    <input type='text' class="form-control" />
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-</div>
-</div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
-<script src="build/js/bootstrap-datetimepicker.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
+
+<script src="build/js/bootstrap-datetimepicker.min.js"></script>
 
 <script type="text/javascript">
             $(function () {
-              
-				$('#datetimepicker1').datetimepicker();
-			$('#datetimepicker2').datetimepicker({
-                    daysOfWeekDisabled: [0, 6],
-					 maxDate: moment("05/25/2018"),
-					
-                    disabledDates: [
+			    $('#datetimepicker1').datetimepicker({
+                    daysOfWeekDisabled: [0, 6],                        //weekend off
+					 maxDate: moment("05/25/2018"),                   //Select date before date on 25
+					disabledDates: [                                 //disable date 21,22 and 25
                         moment("05/25/2018"),
                         new Date(2018, 05 - 1, 21),
                         "05/22/2018"
                     ],
-					stepping:120
-
-                     
+					                                    
+					disabledTimeIntervals: [                                          //Time set only 8.30am to 8.30pm
+                       [moment().hour(0).minutes(0), moment().hour(8).minutes(30)],
+                        [moment().hour(20).minutes(30), moment().hour(24).minutes(0)]
+                       ],
+					   stepping:120  //select time in 120 minutes slot
+					   
                 });
             });
         </script>
